@@ -65,10 +65,42 @@ p {
     margin: 0.5rem 0;
 }
 
-/* Ajoutez votre code CSS supplémentaire ici */
-/* Par exemple, vous pouvez ajouter le code suivant pour les h3 */
-h3 {
-    color: #003366; /* Dark blue color */
-    border-bottom: 2px solid #003366; /* Dark blue underline */
-    padding-bottom: 0.5rem;
+#pdf-section {
+    margin-top: 2rem;
+}
+
+button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button#add-pdf {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button#remove-pdf {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#pdf-container {
+    margin-top: 10px;
+}
+
+.pdf-link {
+    display: block;
+    margin: 5px 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.pdf-link:hover {
+    text-decoration: underline;
 }
