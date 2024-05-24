@@ -1,45 +1,87 @@
-/* Styles pour les sections spécifiques */
-#experiences h3,
-#skills h3,
-#education h3,
-#languages-interests h3 {
-    color: #003366; /* Couleur bleu foncé pour les titres */
-    border-bottom: 2px solid #003366; /* Trait sous les titres */
-    padding-bottom: 10px; /* Espacement entre le titre et le trait */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-#experiences p,
-#skills p,
-#education p,
-#languages-interests p {
-    color: #333; /* Couleur de texte principale */
-    font-size: 16px; /* Taille de police */
-    line-height: 1.6; /* Hauteur de ligne */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
 }
 
-.card {
-    background-color: #f4f4f4; /* Couleur de fond des sections */
-    border: 1px solid #ddd; /* Bordure légère */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 20px; /* Espacement intérieur */
-    margin-bottom: 20px; /* Marge en bas */
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #003366; /* Dark blue color */
+    border-bottom: 2px solid #003366; /* Dark blue underline */
+    padding-bottom: 0.5rem;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+hr {
+    border: 1px solid #003366;
+    margin-bottom: 1rem;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
-    grid-gap: 20px; /* Espacement entre les éléments */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
-/* Styles spécifiques pour les images */
-.card img {
-    max-width: 100%; /* Image responsive, ne dépasse pas la largeur de son conteneur */
-    border-radius: 5px; /* Coins arrondis */
-    margin-bottom: 10px; /* Espacement en bas */
-}
-
-/* Styles pour les listes de compétences/langues */
-.card ul {
-    list-style-type: disc; /* Puces rondes */
-    margin-left: 20px; /* Marge à gauche */
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
