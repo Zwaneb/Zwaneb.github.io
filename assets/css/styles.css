@@ -1,87 +1,57 @@
-/* Existing styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
+/* Ajouts pour la nouvelle structure de la page About Me */
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
+/* Section principale */
 main {
     padding: 1rem;
 }
 
-section {
-    margin-bottom: 2rem;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #333;
-    color: #fff;
-}
-
-.name {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-p {
-    margin: 0.5rem 0;
-}
-
-/* Additional styles */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-}
-
+/* Carte pour chaque section */
 .card {
     background-color: #fff;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.card h3 {
-    color: #003366; /* Dark blue color */
-    border-bottom: 2px solid #003366; /* Dark blue underline */
-    padding-bottom: 0.5rem;
+/* Style pour le nom */
+.name {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Style pour les titres de section */
+h3 {
+    color: #003366; /* Bleu foncé */
+}
+
+/* Style pour les lignes de séparation */
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1rem 0;
+}
+
+/* Style pour la grille des sections */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Style pour chaque section individuelle */
+section {
+    margin-bottom: 0; /* Supprimer la marge inférieure pour s'aligner correctement dans la grille */
+}
+
+/* Style pour le lien dans le pied de page */
+footer a {
+    color: #003366; /* Couleur bleue foncée */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Style pour le lien lorsqu'il est survolé */
+footer a:hover {
+    text-decoration: underline;
 }
