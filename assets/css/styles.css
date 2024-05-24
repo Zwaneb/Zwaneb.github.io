@@ -1,3 +1,4 @@
+/* Existing styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -58,30 +59,29 @@ footer {
 
 h3 {
     font-size: 1.5rem;
-    color: #003366; /* Dark blue color */
-    border-bottom: 2px solid #003366; /* Dark blue underline */
-    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
 }
 
 p {
     margin: 0.5rem 0;
 }
 
-hr {
-    border: 1px solid #003366;
-    margin-bottom: 1rem;
-}
-
+/* Additional styles */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
 }
 
 .card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: #fff;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #003366; /* Dark blue color */
+    border-bottom: 2px solid #003366; /* Dark blue underline */
+    padding-bottom: 0.5rem;
 }
