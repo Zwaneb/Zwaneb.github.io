@@ -1,73 +1,45 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* Styles pour les sections spécifiques */
+#experiences h3,
+#skills h3,
+#education h3,
+#languages-interests h3 {
+    color: #003366; /* Couleur bleu foncé pour les titres */
+    border-bottom: 2px solid #003366; /* Trait sous les titres */
+    padding-bottom: 10px; /* Espacement entre le titre et le trait */
 }
 
-header {
-    background-color: #f0f0f0;
-    padding: 20px;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-.main {
-    padding: 20px;
+#experiences p,
+#skills p,
+#education p,
+#languages-interests p {
+    color: #333; /* Couleur de texte principale */
+    font-size: 16px; /* Taille de police */
+    line-height: 1.6; /* Hauteur de ligne */
 }
 
 .card {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.card img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    color: #333;
-    font-size: 18px;
-    margin-top: 0;
-}
-
-.card p {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.5;
+    background-color: #f4f4f4; /* Couleur de fond des sections */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 20px; /* Espacement intérieur */
+    margin-bottom: 20px; /* Marge en bas */
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
+    grid-gap: 20px; /* Espacement entre les éléments */
 }
 
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+/* Styles spécifiques pour les images */
+.card img {
+    max-width: 100%; /* Image responsive, ne dépasse pas la largeur de son conteneur */
+    border-radius: 5px; /* Coins arrondis */
+    margin-bottom: 10px; /* Espacement en bas */
+}
+
+/* Styles pour les listes de compétences/langues */
+.card ul {
+    list-style-type: disc; /* Puces rondes */
+    margin-left: 20px; /* Marge à gauche */
 }
