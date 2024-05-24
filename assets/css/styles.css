@@ -58,7 +58,6 @@ footer {
 
 h3 {
     font-size: 1.5rem;
-    margin-top: 1.5rem;
     color: #003366; /* Dark blue color */
     border-bottom: 2px solid #003366; /* Dark blue underline */
     padding-bottom: 0.5rem;
@@ -68,22 +67,21 @@ p {
     margin: 0.5rem 0;
 }
 
-/* Custom styles for the About Me page */
+hr {
+    border: 1px solid #003366;
+    margin-bottom: 1rem;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
-.grid-item {
-    background-color: #fff;
+.card {
+    background: #fff;
     border: 1px solid #ddd;
-    padding: 20px;
+    border-radius: 5px;
+    padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#about h3 {
-    color: #003366;
-    border-bottom: 2px solid #003366;
-    padding-bottom: 0.5rem;
 }
