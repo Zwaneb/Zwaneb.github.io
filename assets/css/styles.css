@@ -1,57 +1,73 @@
-/* Ajouts pour la nouvelle structure de la page About Me */
-
-/* Section principale */
-main {
-    padding: 1rem;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Carte pour chaque section */
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main {
+    padding: 20px;
+}
+
 .card {
     background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     margin-bottom: 20px;
 }
 
-/* Style pour le nom */
-.name {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
+.card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-/* Style pour les titres de section */
-h3 {
-    color: #003366; /* Bleu foncé */
+.card h3 {
+    color: #333;
+    font-size: 18px;
+    margin-top: 0;
 }
 
-/* Style pour les lignes de séparation */
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1rem 0;
+.card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-/* Style pour la grille des sections */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
 }
 
-/* Style pour chaque section individuelle */
-section {
-    margin-bottom: 0; /* Supprimer la marge inférieure pour s'aligner correctement dans la grille */
-}
-
-/* Style pour le lien dans le pied de page */
-footer a {
-    color: #003366; /* Couleur bleue foncée */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Style pour le lien lorsqu'il est survolé */
-footer a:hover {
-    text-decoration: underline;
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
