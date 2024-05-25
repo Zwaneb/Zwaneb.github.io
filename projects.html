@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Ing Zeinebou Data Science projects</title>
+    <title>Projects - Zwaneb Data Science</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script defer src="assets/js/script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Ing Zeinebou Data Science projects</h1>
+        <h1>Zwaneb Data Science Projects</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -19,27 +19,10 @@
         </nav>
     </header>
     <main>
-        <section id="project1">
-            <h2>Project 1: Analysis of Gold Mining Data</h2>
-            <p>This project involves analyzing data from a gold mining company to optimize operations.</p>
-        </section>
-        <section id="project2">
-            <h2>Project 2: Web Application for Data Analysis</h2>
-            <p>Development of a web application to help farmers analyze agricultural data using AI and IoT.</p>
-        </section>
-        <section id="project3">
-            <h2>Project 3: Traditional Game Development</h2>
-            <p>Creating an online version of the traditional game "Dhamet" using Python.</p>
-        </section>
-        <section id="pdf-section">
-            <h2>Additional Project Resources</h2>
-            <button id="add-pdf">Ajouter un projet</button>
-            <button id="remove-pdf">Supprimer le projet</button>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Below are the data science projects by Zwaneb.</p>
             <div id="pdf-container"></div>
-        </section>
-        <section id="images">
-            <h2>Images Related to Data Science</h2>
-            <!-- Both images have been removed as requested -->
         </section>
     </main>
     <footer>
@@ -50,5 +33,27 @@
             <a href="https://github.com/Zwaneb">GitHub</a>
         </p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pdfContainer = document.getElementById("pdf-container");
+
+            // List of PDF files
+            const pdfFiles = [
+                "C:/Users/hp/Downloads/ZwanebprojectsDS/project1.pdf",
+                "C:/Users/hp/Downloads/ZwanebprojectsDS/project2.pdf",
+                "C:/Users/hp/Downloads/ZwanebprojectsDS/project3.pdf"
+            ];
+
+            pdfFiles.forEach(function(filePath) {
+                const fileName = filePath.split('/').pop();
+                const link = document.createElement("a");
+                link.href = filePath;
+                link.textContent = fileName;
+                link.target = "_blank"; // Open in a new tab
+                pdfContainer.appendChild(link);
+                pdfContainer.appendChild(document.createElement("br"));
+            });
+        });
+    </script>
 </body>
 </html>
