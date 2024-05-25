@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const addPdfButton = document.getElementById("add-pdf");
     const removePdfButton = document.getElementById("remove-pdf");
 
-    // Set to store added PDFs
-    const addedPdfs = new Set();
-
     // List of initial PDF files
     const pdfFiles = [
         "https://zwaneb.github.io/ZwanebprojectsDS/quizCifar-1.pdf",
@@ -20,29 +17,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Display all PDF links
         pdfFiles.forEach(function(pdfLink) {
-            if (!addedPdfs.has(pdfLink)) {
-                const link = document.createElement("a");
-                link.href = pdfLink;
-                link.textContent = pdfLink.split('/').pop().replace(/%20/g, ' '); // Display just the filename
-                link.target = "_blank"; // Open in a new tab
-                pdfContainer.appendChild(link);
-                pdfContainer.appendChild(document.createElement("br"));
-            }
+            const link = document.createElement("a");
+            link.href = pdfLink;
+            link.textContent = pdfLink.split('/').pop().replace(/%20/g, ' '); // Display just the filename
+            link.target = "_blank"; // Open in a new tab
+            pdfContainer.appendChild(link);
+            pdfContainer.appendChild(document.createElement("br"));
         });
     }
 
     function addProjectPdf() {
         const newPdf = prompt("Enter the URL of the new project PDF:");
-        if (newPdf && !addedPdfs.has(newPdf)) {
-            addedPdfs.add(newPdf);
+        if (newPdf && !pdfFiles.includes(newPdf)) {
+            pdfFiles.push(newPdf);
             displayPdfLinks();
+        } else {
+            alert("Invalid URL or PDF already exists.");
         }
     }
 
     function removeProjectPdf() {
         const pdfToRemove = prompt("Enter the URL of the project PDF to remove:");
-        if (pdfToRemove && addedPdfs.has(pdfToRemove)) {
-            addedPdfs.delete(pdfToRemove);
+        const index = pdfFiles.indexOf(pdfToRemove);
+        if (index > -1) {
+            pdfFiles.splice(index, 1);
             displayPdfLinks();
         } else {
             alert("PDF not found.");
