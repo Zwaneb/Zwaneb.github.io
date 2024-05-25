@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Zwaneb Data Science</title>
+    <title>Projects - Zwaneb Data Science Projects</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script defer src="assets/js/script.js"></script>
 </head>
@@ -22,7 +22,12 @@
         <section id="projects">
             <h2>Projects</h2>
             <p>Below are the data science projects by Zwaneb.</p>
-            <div id="pdf-container"></div>
+            <div id="pdf-container">
+                <a href="https://Zwaneb.github.io/ZwanebprojectsDS/quizCifar-1.pdf" target="_blank">Project: CIFAR-10 Quiz</a><br>
+                <a href="https://Zwaneb.github.io/ZwanebprojectsDS/Titanic_Stacking_Exercice.pdf" target="_blank">Project: Titanic - Stacking Exercise</a><br>
+                <a href="https://Zwaneb.github.io/ZwanebprojectsDS/zwaneb_ridge.pdf" target="_blank">Project: Ridge Regression</a><br>
+                <a href="https://Zwaneb.github.io/ZwanebprojectsDS/Adaboost_ou_XGBoost.pdf" target="_blank">Project: Adaboost ou XGBoost</a><br>
+            </div>
         </section>
         <section id="pdf-section">
             <h2>Additional Project Resources</h2>
@@ -38,5 +43,47 @@
             <a href="https://github.com/Zwaneb">GitHub</a>
         </p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pdfContainer = document.getElementById("pdf-container");
+
+            const pdfFiles = [
+                "quizCifar-1.pdf",
+                "Titanic_Stacking_Exercice.pdf",
+                "zwaneb_ridge.pdf",
+                "Adaboost_ou_XGBoost.pdf"
+            ];
+
+            pdfFiles.forEach(function(fileName) {
+                const link = document.createElement("a");
+                link.href = `https://Zwaneb.github.io/ZwanebprojectsDS/${fileName}`;
+                link.textContent = `Project: ${fileName.replace(/_/g, ' ').replace(/.pdf/g, '')}`;
+                link.target = "_blank";
+                pdfContainer.appendChild(link);
+                pdfContainer.appendChild(document.createElement("br"));
+            });
+
+            document.getElementById("add-pdf").addEventListener("click", function() {
+                const newFileName = prompt("Enter the filename of the new project PDF:");
+                if (newFileName) {
+                    const link = document.createElement("a");
+                    link.href = `https://Zwaneb.github.io/ZwanebprojectsDS/${newFileName}`;
+                    link.textContent = `Project: ${newFileName.replace(/_/g, ' ').replace(/.pdf/g, '')}`;
+                    link.target = "_blank";
+                    pdfContainer.appendChild(link);
+                    pdfContainer.appendChild(document.createElement("br"));
+                }
+            });
+
+            document.getElementById("remove-pdf").addEventListener("click", function() {
+                const links = pdfContainer.getElementsByTagName("a");
+                if (links.length > 0) {
+                    pdfContainer.removeChild(links[links.length - 1].nextSibling); // Remove <br> after the link
+                    pdfContainer.removeChild(links[links.length - 1]); // Remove the link
+                }
+            });
+        });
+    </script>
 </body>
 </html>
