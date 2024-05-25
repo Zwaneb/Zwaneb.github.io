@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const addPdfButton = document.getElementById("add-pdf");
     const removePdfButton = document.getElementById("remove-pdf");
 
+    // Set to store added PDFs
+    const addedPdfs = new Set();
+
     // List of initial PDF files
     const pdfFiles = [
         "https://zwaneb.github.io/ZwanebprojectsDS/quizCifar-1.pdf",
@@ -17,28 +20,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Display all PDF links
         pdfFiles.forEach(function(pdfLink) {
-            const link = document.createElement("a");
-            link.href = pdfLink;
-            link.textContent = pdfLink.split('/').pop().replace(/%20/g, ' '); // Display just the filename
-            link.target = "_blank"; // Open in a new tab
-            pdfContainer.appendChild(link);
-            pdfContainer.appendChild(document.createElement("br"));
+            if (!addedPdfs.has(pdfLink)) {
+                const link = document.createElement("a");
+                link.href = pdfLink;
+                link.textContent = pdfLink.split('/').pop().replace(/%20/g, ' '); // Display just the filename
+                link.target = "_blank"; // Open in a new tab
+                pdfContainer.appendChild(link);
+                pdfContainer.appendChild(document.createElement("br"));
+            }
         });
     }
 
     function addProjectPdf() {
         const newPdf = prompt("Enter the URL of the new project PDF:");
-        if (newPdf) {
-            pdfFiles.push(newPdf);
+        if (newPdf && !addedPdfs.has(newPdf)) {
+            addedPdfs.add(newPdf);
             displayPdfLinks();
         }
     }
 
     function removeProjectPdf() {
         const pdfToRemove = prompt("Enter the URL of the project PDF to remove:");
-        const index = pdfFiles.indexOf(pdfToRemove);
-        if (index > -1) {
-            pdfFiles.splice(index, 1);
+        if (pdfToRemove && addedPdfs.has(pdfToRemove)) {
+            addedPdfs.delete(pdfToRemove);
             displayPdfLinks();
         } else {
             alert("PDF not found.");
