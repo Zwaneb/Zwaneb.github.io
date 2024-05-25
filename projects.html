@@ -24,6 +24,11 @@
             <p>Below are the data science projects by Zwaneb.</p>
             <div id="pdf-container"></div>
         </section>
+        <section id="pdf-section">
+            <h2>Additional Project Resources</h2>
+            <button id="add-pdf">Ajouter un projet</button>
+            <button id="remove-pdf">Supprimer le projet</button>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Zeinebou Mohamed Lemine. All rights reserved.</p>
@@ -33,27 +38,5 @@
             <a href="https://github.com/Zwaneb">GitHub</a>
         </p>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const pdfContainer = document.getElementById("pdf-container");
-
-            // List of PDF files
-            const pdfFiles = [
-                "C:/Users/hp/Downloads/ZwanebprojectsDS/project1.pdf",
-                "C:/Users/hp/Downloads/ZwanebprojectsDS/project2.pdf",
-                "C:/Users/hp/Downloads/ZwanebprojectsDS/project3.pdf"
-            ];
-
-            pdfFiles.forEach(function(filePath) {
-                const fileName = filePath.split('/').pop();
-                const link = document.createElement("a");
-                link.href = filePath;
-                link.textContent = fileName;
-                link.target = "_blank"; // Open in a new tab
-                pdfContainer.appendChild(link);
-                pdfContainer.appendChild(document.createElement("br"));
-            });
-        });
-    </script>
 </body>
 </html>
