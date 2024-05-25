@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const removePdfButton = document.getElementById("remove-pdf");
 
     // List of initial PDF files
-    const pdfFiles = [
-        "https://zwaneb.github.io/ZwanebprojectsDS/quizCifar-1.pdf",
-        "https://zwaneb.github.io/ZwanebprojectsDS/Titanic%20-%20Stacking%20Exercice.pdf",
-        "https://zwaneb.github.io/ZwanebprojectsDS/zwaneb_ridge.pdf",
-        "https://zwaneb.github.io/ZwanebprojectsDS/Adaboost%20ou%20XGBoost%20.pdf"
+    let pdfFiles = [
+        "https://Zwaneb.github.io/ZwanebprojectsDS/quizCifar-1.pdf",
+        "https://Zwaneb.github.io/ZwanebprojectsDS/Titanic%20-%20Stacking%20Exercise.pdf",
+        "https://Zwaneb.github.io/ZwanebprojectsDS/zwaneb_ridge.pdf",
+        "https://Zwaneb.github.io/ZwanebprojectsDS/Adaboost%20ou%20XGBoost%20.pdf"
     ];
 
     function displayPdfLinks() {
@@ -28,11 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function addProjectPdf() {
         const newPdf = prompt("Enter the URL of the new project PDF:");
-        if (newPdf && !pdfFiles.includes(newPdf)) {
+        if (newPdf) {
             pdfFiles.push(newPdf);
             displayPdfLinks();
-        } else {
-            alert("Invalid URL or PDF already exists.");
         }
     }
 
@@ -47,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Add event listeners to buttons
     addPdfButton.addEventListener("click", addProjectPdf);
     removePdfButton.addEventListener("click", removeProjectPdf);
 
