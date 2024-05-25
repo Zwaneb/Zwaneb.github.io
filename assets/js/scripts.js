@@ -28,9 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function addProjectPdf() {
         const newPdf = prompt("Enter the URL of the new project PDF:");
-        if (newPdf) {
+        if (newPdf && !pdfFiles.includes(newPdf)) {
             pdfFiles.push(newPdf);
             displayPdfLinks();
+        } else {
+            alert("The PDF already exists in the list or the URL is invalid.");
         }
     }
 
