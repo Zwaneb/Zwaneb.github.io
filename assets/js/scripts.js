@@ -1,23 +1,22 @@
+js: 
 document.addEventListener("DOMContentLoaded", function() {
     const pdfContainer = document.getElementById("pdf-container");
     const addPdfButton = document.getElementById("add-pdf");
     const removePdfButton = document.getElementById("remove-pdf");
-    const pdfList = document.getElementById("pdf-list");
 
     // List of initial PDF files
     const pdfFiles = [
         "https://zwaneb.github.io/ZwanebprojectsDS/quizCifar-1.pdf",
-        "https://zwaneb.github.io/ZwanebprojectsDS/Titanic_Stacking_Exercice.pdf",
+        "https://zwaneb.github.io/ZwanebprojectsDS/Titanic%20-%20Stacking%20Exercice.pdf",
         "https://zwaneb.github.io/ZwanebprojectsDS/zwaneb_ridge.pdf",
-        "https://zwaneb.github.io/ZwanebprojectsDS/Adaboost_ou_XGBoost.pdf"
+        "https://zwaneb.github.io/ZwanebprojectsDS/Adaboost%20ou%20XGBoost%20.pdf"
     ];
 
     function displayPdfLinks() {
-        // Clear existing links and options
+        // Clear existing links
         pdfContainer.innerHTML = '';
-        pdfList.innerHTML = '';
 
-        // Display all PDF links and populate the select list
+        // Display all PDF links
         pdfFiles.forEach(function(pdfLink) {
             const link = document.createElement("a");
             link.href = pdfLink;
@@ -25,11 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
             link.target = "_blank"; // Open in a new tab
             pdfContainer.appendChild(link);
             pdfContainer.appendChild(document.createElement("br"));
-
-            const option = document.createElement("option");
-            option.value = pdfLink;
-            option.textContent = pdfLink.split('/').pop().replace(/%20/g, ' '); // Display just the filename
-            pdfList.appendChild(option);
         });
     }
 
@@ -44,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function removeProjectPdf() {
-        const pdfToRemove = pdfList.value;
+        const pdfToRemove = prompt("Enter the URL of the project PDF to remove:");
         const index = pdfFiles.indexOf(pdfToRemove);
         if (index > -1) {
             pdfFiles.splice(index, 1);
