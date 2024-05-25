@@ -44,46 +44,5 @@
         </p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const pdfContainer = document.getElementById("pdf-container");
-
-            const pdfFiles = [
-                "quizCifar-1.pdf",
-                "Titanic_Stacking_Exercice.pdf",
-                "zwaneb_ridge.pdf",
-                "Adaboost_ou_XGBoost.pdf"
-            ];
-
-            pdfFiles.forEach(function(fileName) {
-                const link = document.createElement("a");
-                link.href = `https://Zwaneb.github.io/ZwanebprojectsDS/${fileName}`;
-                link.textContent = `Project: ${fileName.replace(/_/g, ' ').replace(/.pdf/g, '')}`;
-                link.target = "_blank";
-                pdfContainer.appendChild(link);
-                pdfContainer.appendChild(document.createElement("br"));
-            });
-
-            document.getElementById("add-pdf").addEventListener("click", function() {
-                const newFileName = prompt("Enter the filename of the new project PDF:");
-                if (newFileName) {
-                    const link = document.createElement("a");
-                    link.href = `https://Zwaneb.github.io/ZwanebprojectsDS/${newFileName}`;
-                    link.textContent = `Project: ${newFileName.replace(/_/g, ' ').replace(/.pdf/g, '')}`;
-                    link.target = "_blank";
-                    pdfContainer.appendChild(link);
-                    pdfContainer.appendChild(document.createElement("br"));
-                }
-            });
-
-            document.getElementById("remove-pdf").addEventListener("click", function() {
-                const links = pdfContainer.getElementsByTagName("a");
-                if (links.length > 0) {
-                    pdfContainer.removeChild(links[links.length - 1].nextSibling); // Remove <br> after the link
-                    pdfContainer.removeChild(links[links.length - 1]); // Remove the link
-                }
-            });
-        });
-    </script>
 </body>
 </html>
